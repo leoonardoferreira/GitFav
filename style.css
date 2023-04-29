@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-primary: 'Poppins', sans-serif;
+    --text-color: white;
+    
+    --hue: 195;
+    --primary-color: hsl(var(--hue), 91%, 25%);
+    --secondary-color: hsl(var(--hue), 72%, 13%);
+
+}
+
+body {
+    color: var(--text-color);
+    background: black;
+}
+
+body * {
+    font-family: var(--ff-primary);
+}
+
+#app {
+    padding: 1.25rem;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 5.5rem 0;
+}
+
+header h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5rem;
+}
+
+.search {
+    display: flex;
+    gap: .5rem;
+}
+
+.search input {
+    font-size: 1rem;
+    font-weight:700;
+
+    height: 3rem;
+    width: 28.875rem;
+    padding: 0 1rem;
+
+    background: #06181C;
+    color: #7C7C8A;
+
+    border: none;
+    border-radius: 5px;
+}
+
+.search button {
+    white-space: nowrap;
+
+    background: var(--primary-color);
+    width: 10.625rem;
+    height: 3rem;
+    
+    border: none;
+    border-radius: .3125rem;
+    
+    transition: all 400ms;
+    cursor: pointer;
+
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .875rem;
+    color: white;
+}
+
+.search button:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+/* design of the table and its elements */
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    border: 2px solid #4a808c;
+    border-radius: .75rem;
+}
+
+table * {
+    font-size: 1rem;
+    color: #e1e1e6;
+}
+
+table thead,
+table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table thead {
+    background: #092d38;
+    border-radius: .75rem .75rem 0 0;
+}
+
+table th {
+    text-align: left;
+    padding: 1rem;
+    text-overflow: wrap;
+}
+
+tbody {
+    display: block;
+    max-height: 23.75rem;
+    overflow-y: overlay;
+    overflow-x: hidden;
+    border-radius: 0 0 .75rem .75rem;
+}
+
+::-webkit-scrollbar {
+    width: 1.125rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4A808C;
+    background-clip: content-box;
+    border: 6px solid transparent;
+    border-radius: .625rem;
+}
+
+table tr > * {
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+table tbody tr:nth-child(even) td {
+    background-color: #06181c;
+}
+
+table tr > :first-child {
+    padding-left: 2.5rem;
+}
+
+table tr:first-child td {
+    border-top: none;
+}
+
+table td {
+    border-top: 2px solid #4a808c;
+}
+
+td .user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+td .user a {
+    text-decoration: none;
+}
+
+td .user a p {
+    color: #e1e1e6;
+    font-weight: bold;
+}
+
+td .user span {
+    color: #e1e1e6;
+    font-weight: normal;
+}
+
+td .user img {
+    width: 3.5rem;
+    height: 3.5rem;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+td .remove {
+    font-size: 1rem;
+    color: #F75A68;
+    background: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+/* table when it is empty/with no user favorited */
+
+
+table tbody .empty-table td {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 4rem;
+    color: var(--color-empty-table);
+  
+    display: table-cell;
+    text-align: center;
+    height: 38rem;
+    padding: 0;
+    background-color: var(--bg-empty);
+  }
+  
+  table tbody .empty-table td div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+  }
